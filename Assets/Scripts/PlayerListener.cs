@@ -12,12 +12,6 @@ public class PlayerListener : MonoBehaviour
 
     private char c1, c2, c3, c4;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public void SetLetters(char c1, char c2, char c3, char c4) {
         this.c1 = c1;
         this.c2 = c2;

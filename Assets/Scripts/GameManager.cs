@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
         int i = 0;
         foreach (var word in words) {
             combos[i] = word.ToCharArray();
+            print(word);
             i++;
         }
     }
