@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        guiText = GetComponentInChildren<TextMesh>();
+        // guiText = GetComponentInChildren<TextMesh>();
         
     }
 
