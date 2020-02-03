@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         words = new HashSet<string> (comboFile.text.Split('\n'));
-        combos = new char[words.Length][];
+        combos = new char[words.Count][];
         int i = 0;
         foreach (var word in words) {
             combos[i] = word.ToCharArray();
