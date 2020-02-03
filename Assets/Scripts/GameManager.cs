@@ -26,13 +26,7 @@ public class GameManager : MonoBehaviour
             combos[i] = word.ToCharArray();
             i++;
         }
-        words = new HashSet<string> (wordsFile.text.Split('\n'));
-        foreach (string word in words)
-        {
-            print(word.Length);
-        }
-        foreach (string s in "someMtext".Split('M'))
-            print(s);
+        words = new HashSet<string> (wordsFile.text.Split('\n').Select(word => word.Trim()));
         print(IsWord("WORD"));
     }
 
