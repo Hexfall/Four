@@ -260,17 +260,17 @@ PrefabInstance:
     - target: {fileID: 9141629491167435328, guid: 0c0d33e99237c76489108edcf12fdbb3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.1821783
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9141629491167435328, guid: 0c0d33e99237c76489108edcf12fdbb3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5971699
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9141629491167435328, guid: 0c0d33e99237c76489108edcf12fdbb3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.9021967
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9141629491167435328, guid: 0c0d33e99237c76489108edcf12fdbb3,
         type: 3}
@@ -317,6 +317,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerInput2
       objectReference: {fileID: 0}
+    - target: {fileID: 9141629491167435334, guid: 0c0d33e99237c76489108edcf12fdbb3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 9141629491167435335, guid: 0c0d33e99237c76489108edcf12fdbb3,
         type: 3}
       propertyPath: key1
@@ -349,17 +354,17 @@ PrefabInstance:
     - target: {fileID: 9141629491167435328, guid: 0c0d33e99237c76489108edcf12fdbb3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.1821783
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9141629491167435328, guid: 0c0d33e99237c76489108edcf12fdbb3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5971699
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9141629491167435328, guid: 0c0d33e99237c76489108edcf12fdbb3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.9021967
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9141629491167435328, guid: 0c0d33e99237c76489108edcf12fdbb3,
         type: 3}
