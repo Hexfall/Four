@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameManager instance;
+    public static GameManager instance;
     public HashSet<string> words;
     public char[][] combos;
     public TextAsset wordsFile;
@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        words = new HashSet<string> (comboFile.text.Split('\n'));
+        words = new HashSet<string> (comboFile.text.Split('\n').Select(word => word.Trim()));
         combos = new char[words.Count][];
         int i = 0;
         foreach (var word in words) {
@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
             i++;
         }
         words = new HashSet<string> (wordsFile.text.Split('\n').Select(word => word.Trim()));
-        print(IsWord("WORD"));
     }
 
     // Update is called once per frame

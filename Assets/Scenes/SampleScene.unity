@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -333,7 +333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79eeb0df9821fef40bbf8563d53ea406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instance: {fileID: 0}
   wordsFile: {fileID: 4900000, guid: 48c99230e6406424d80e1182e4b09819, type: 3}
   comboFile: {fileID: 4900000, guid: 3f4fd6c2bbed06045bd84b0f1194bf8d, type: 3}
 --- !u!4 &529567714
@@ -380,7 +379,7 @@ PrefabInstance:
     - target: {fileID: 4061342398774544397, guid: 0c0d33e99237c76489108edcf12fdbb3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -200
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4061342398774544397, guid: 0c0d33e99237c76489108edcf12fdbb3,
         type: 3}
@@ -390,6 +389,31 @@ PrefabInstance:
     - target: {fileID: 4061342398774544397, guid: 0c0d33e99237c76489108edcf12fdbb3,
         type: 3}
       propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769623610205816023, guid: 0c0d33e99237c76489108edcf12fdbb3,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769623610205816023, guid: 0c0d33e99237c76489108edcf12fdbb3,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769623610205816023, guid: 0c0d33e99237c76489108edcf12fdbb3,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769623610205816023, guid: 0c0d33e99237c76489108edcf12fdbb3,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769623610205816023, guid: 0c0d33e99237c76489108edcf12fdbb3,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5825237736571076849, guid: 0c0d33e99237c76489108edcf12fdbb3,
@@ -646,7 +670,7 @@ PrefabInstance:
     - target: {fileID: 4061342398774544397, guid: 0c0d33e99237c76489108edcf12fdbb3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 200
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 4061342398774544397, guid: 0c0d33e99237c76489108edcf12fdbb3,
         type: 3}
@@ -661,7 +685,7 @@ PrefabInstance:
     - target: {fileID: 4061342398774544397, guid: 0c0d33e99237c76489108edcf12fdbb3,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4061342398774544397, guid: 0c0d33e99237c76489108edcf12fdbb3,
         type: 3}
