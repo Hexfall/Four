@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     PlayerListener listener;
     public TextMeshProUGUI guiText;
     public TextMeshProUGUI keyText;
+    public TextMeshProUGUI scoreText;
 
     public string lastAcceptedWord;
 
@@ -20,6 +21,8 @@ public class Player : MonoBehaviour
         guiText = GetComponentInChildren<TextMeshProUGUI>();
         listener = GetComponent<PlayerListener>();
         keyText = transform.Find("Chars").GetComponent<TextMeshProUGUI>();
+        scoreText = transform.Find("Score").GetComponent<TextMeshProUGUI>();
+        
 
         Check();
     }
@@ -29,6 +32,7 @@ public class Player : MonoBehaviour
         if (GameManager.instance.IsWord(guiText.text)) {
             points++;
             lastAcceptedWord = guiText.text;
+            scoreText.text = "Score: " + points;
         }
 
         //Reset the word either way
