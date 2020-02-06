@@ -22,7 +22,8 @@ public class StackScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+            Remove();
     }
 
     void Add(int amount = 1)
@@ -41,7 +42,7 @@ public class StackScript : MonoBehaviour
         Destroy(boxArray[pointer]);
         pointer++;
         if (Empty())
-            GameManager.instance.Win(gameObject.tag);
+            GameManager.instance.Win(gameObject.name);
         if (amount > 1)
             Remove(amount - 1);
     }

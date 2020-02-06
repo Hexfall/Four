@@ -48,8 +48,8 @@ public class GameManager : MonoBehaviour
         return words.Contains(word);
     }
 
-    public void Win(string loser)
+    public void Win(string winner)
     {
-        
+        print(winner + " is the winner!");
     }
 }
