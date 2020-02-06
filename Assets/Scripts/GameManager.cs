@@ -47,4 +47,9 @@ public class GameManager : MonoBehaviour
     {
         return words.Contains(word);
     }
+
+    public void Win(string loser)
+    {
+        
+    }
 }
