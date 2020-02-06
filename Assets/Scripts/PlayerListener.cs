@@ -30,7 +30,7 @@ public class PlayerListener : MonoBehaviour
 
     public string GetLetterString()
     {
-        return c1 + "\n" + c2 + " " + c3 + " " + c4;
+        return c1 + "\n" + c2 + c3 + c4;
     }
 
     void Start()
