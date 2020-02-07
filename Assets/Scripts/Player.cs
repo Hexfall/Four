@@ -13,6 +13,11 @@ public class Player : MonoBehaviour
 
     public GameObject stack;
     public GameObject opponentStack;
+    public GameObject combo;
+
+    private StackScript stackScript;
+    private StackScript opStackScript;
+    private ComboScript comboScript;
 
     public string lastAcceptedWord;
 
@@ -26,6 +31,9 @@ public class Player : MonoBehaviour
         keyText = transform.Find("Chars").GetComponent<TextMeshProUGUI>();
         scoreText = transform.Find("Score").GetComponent<TextMeshProUGUI>();
         
+        stackScript = stack.GetComponent<StackScript>();
+        opStackScript = opponentStack.GetComponent<StackScript>();
+        comboScript = combo.GetComponent<ComboScript>();
 
         Check();
     }
@@ -33,11 +41,15 @@ public class Player : MonoBehaviour
     private void Check() {
         //Check word for correctness and give out points
         if (GameManager.instance.IsWord(guiText.text)) {
-            stack.GetComponent<StackScript>().Remove();
+            stackScript.Remove();
+            comboScript.Add();
+            ComboCheck();
             points++;
             lastAcceptedWord = guiText.text;
             scoreText.text = "Score: " + points;
         }
+        else
+            comboScript.Reset();
 
         //Reset the word either way
         guiText.text = "";
@@ -48,6 +60,15 @@ public class Player : MonoBehaviour
 
 
         //Do some other juice stuff
+    }
+
+    private void ComboCheck()
+    {
+        if (comboScript.fullCombo())
+        {
+            opStackScript.Add(2);
+            comboScript.Reset();
+        }
     }
 
     public void Write(char c) {
