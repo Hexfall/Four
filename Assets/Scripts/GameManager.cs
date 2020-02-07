@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
     public char[][] combos;
     public TextAsset wordsFile;
     public TextAsset comboFile;
+    public GameObject winLabel;
 
     void Awake()
     {
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
             i++;
         }
         words = new HashSet<string> (wordsFile.text.Split('\n').Select(word => word.Trim()));
+        winLabel.GetComponent<TextMeshProUGUI>().text = "";
     }
 
     // Update is called once per frame
@@ -51,5 +54,9 @@ public class GameManager : MonoBehaviour
     public void Win(string winner)
     {
         print(winner + " is the winner!");
+        string winName = "1";
+        if (winner.Contains("2"))
+            winName = "2";
+        winLabel.GetComponent<TextMeshProUGUI>().text = string.Format("Player {0} is the winner!", winName);
     }
 }
