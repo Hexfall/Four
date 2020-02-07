@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     PlayerListener listener;
     public TextMeshProUGUI guiText;
     public TextMeshProUGUI keyText;
-    public TextMeshProUGUI scoreText;
 
     public GameObject stack;
     public GameObject opponentStack;
@@ -29,7 +28,6 @@ public class Player : MonoBehaviour
         guiText = GetComponentInChildren<TextMeshProUGUI>();
         listener = GetComponent<PlayerListener>();
         keyText = transform.Find("Chars").GetComponent<TextMeshProUGUI>();
-        scoreText = transform.Find("Score").GetComponent<TextMeshProUGUI>();
         
         stackScript = stack.GetComponent<StackScript>();
         opStackScript = opponentStack.GetComponent<StackScript>();
@@ -46,7 +44,6 @@ public class Player : MonoBehaviour
             ComboCheck();
             points++;
             lastAcceptedWord = guiText.text;
-            scoreText.text = "Score: " + points;
         }
         else
             comboScript.Reset();
