@@ -26,7 +26,7 @@ public class StackScript : MonoBehaviour
             Remove();
     }
 
-    void Add(int amount = 1)
+    public void Add(int amount = 1)
     {
         GameObject b = Instantiate(box) as GameObject;
         b.transform.parent = transform;
@@ -37,7 +37,7 @@ public class StackScript : MonoBehaviour
             Add(amount - 1);
     }
 
-    void Remove(int amount = 1)
+    public void Remove(int amount = 1)
     {
         Destroy(boxArray[pointer]);
         pointer++;

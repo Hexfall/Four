@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI keyText;
     public TextMeshProUGUI scoreText;
 
+    public GameObject stack;
+    public GameObject opponentStack;
+
     public string lastAcceptedWord;
 
     public int points;
@@ -30,6 +33,7 @@ public class Player : MonoBehaviour
     private void Check() {
         //Check word for correctness and give out points
         if (GameManager.instance.IsWord(guiText.text)) {
+            stack.GetComponent<StackScript>().Remove();
             points++;
             lastAcceptedWord = guiText.text;
             scoreText.text = "Score: " + points;
