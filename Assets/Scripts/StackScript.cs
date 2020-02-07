@@ -24,31 +24,36 @@ public class StackScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
             Remove();
+        if (Input.GetMouseButtonDown(1))
+            Add();
     }
 
     public void Add(int amount = 1)
     {
+        // Create a box, set it's position and add it to the boxArray. Amount times.
         GameObject b = Instantiate(box) as GameObject;
         b.transform.parent = transform;
         b.transform.localPosition = new Vector2(curAmount % 4 * spacing, Mathf.Floor(curAmount / 4) * spacing);
         boxArray[curAmount] = b;
         curAmount++;
-        if (amount > 1)
+        if (!(amount <= 1))
             Add(amount - 1);
     }
 
     public void Remove(int amount = 1)
     {
+        // Destroy the 'amount' youngest boxes.
         Destroy(boxArray[pointer]);
         pointer++;
         if (Empty())
             GameManager.instance.Win(gameObject.name);
-        if (amount > 1)
+        if (!(amount <= 1))
             Remove(amount - 1);
     }
 
     public bool Empty()
     {
+        // Returns true if there are no boxes left.
         return boxArray[pointer] == null;
     }
 }
