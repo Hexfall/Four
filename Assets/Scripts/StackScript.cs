@@ -8,7 +8,7 @@ public class StackScript : MonoBehaviour
     public int startAmount;
     private int curAmount = 0;
     private int pointer = 0;
-    public float spacing = 1.0f;
+    public float spacing = 0.7f;
     private GameObject[] boxArray;
     public int maxBoxes = 24;
 
@@ -31,9 +31,11 @@ public class StackScript : MonoBehaviour
     public void Add(int amount = 1)
     {
         // Create a box, set it's position and add it to the boxArray. Amount times.
-        GameObject b = Instantiate(box) as GameObject;
+        GameObject b = Instantiate(box);
         b.transform.parent = transform;
-        b.transform.localPosition = new Vector2(curAmount % 4 * spacing, Mathf.Floor(curAmount / 4) * spacing);
+        b.transform.localPosition = new Vector2(curAmount % 3 * spacing, Mathf.Floor(curAmount / 3) * spacing);
+        b.transform.position += (Vector3) Random.insideUnitCircle / 4f;
+        b.transform.localScale *= 0.8f;
         boxArray[curAmount] = b;
         curAmount++;
         if (!(amount <= 1))
