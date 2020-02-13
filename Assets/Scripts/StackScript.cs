@@ -11,12 +11,14 @@ public class StackScript : MonoBehaviour
     public float spacing = 0.7f;
     private GameObject[] boxArray;
     public int maxBoxes = 24;
+    private AudioSource score;
 
     // Start is called before the first frame update
     void Start()
     {
         boxArray = new GameObject[maxBoxes];
         Add(startAmount);
+        score = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -53,6 +55,7 @@ public class StackScript : MonoBehaviour
             GameManager.instance.Win(gameObject.name);
         if (!(amount <= 1))
             Remove(amount - 1);
+        score.Play();
     }
 
     public bool Empty()
