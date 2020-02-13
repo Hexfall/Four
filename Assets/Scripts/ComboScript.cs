@@ -42,4 +42,8 @@ public class ComboScript : MonoBehaviour
     {
         return pointer == transform.childCount;
     }
+
+    public float comboProgress() {
+        return ((float) pointer) / ((float) transform.childCount);
+    }
 }

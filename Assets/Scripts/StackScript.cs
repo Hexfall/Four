@@ -13,6 +13,8 @@ public class StackScript : MonoBehaviour
     public int maxBoxes = 24;
     private AudioSource score;
 
+    public Player player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,10 @@ public class StackScript : MonoBehaviour
         // Create a box, set it's position and add it to the boxArray. Amount times.
         GameObject b = Instantiate(box);
         SpriteRenderer renderer = b.GetComponent<SpriteRenderer>();
+        SoundOnDestroy soundScript = b.GetComponent<SoundOnDestroy>();
+        if (soundScript != null) {
+            soundScript.player = player;
+        }
         renderer.color = Random.ColorHSV(0, 1, 0, 1, 0.5f, 1);
         b.transform.parent = transform;
         b.transform.localPosition = new Vector2(curAmount % 3 * spacing, Mathf.Floor(curAmount / 3) * spacing);

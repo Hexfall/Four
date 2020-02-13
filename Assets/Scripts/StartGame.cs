@@ -15,7 +15,7 @@ public class StartGame : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            SceneManager.LoadSceneAsync(1);
+            Restart();
         } else if (Input.GetKeyDown(KeyCode.Escape)) {
             if (SceneManager.GetSceneAt(0).isLoaded) {
                 Application.Quit();
@@ -23,5 +23,9 @@ public class StartGame : MonoBehaviour
                 SceneManager.LoadScene(0);
             }
         }
+    }
+
+    public static void Restart() {
+        SceneManager.LoadSceneAsync(1);
     }
 }

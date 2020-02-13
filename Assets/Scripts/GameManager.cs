@@ -31,7 +31,8 @@ public class GameManager : MonoBehaviour
             i++;
         }
         words = new HashSet<string> (wordsFile.text.Split('\n').Select(word => word.Trim()));
-        winLabel.GetComponent<TextMeshProUGUI>().text = "";
+        winLabel.GetComponentInChildren<TextMeshProUGUI>().text = "";
+        winLabel.SetActive(false);
     }
 
     public char[] GetCombo()
@@ -53,8 +54,11 @@ public class GameManager : MonoBehaviour
         string winName = "1";
         if (winner.Contains("2"))
             winName = "2";
-        winLabel.GetComponent<TextMeshProUGUI>().text = string.Format("Player {0} is the winner!", winName);
+        winLabel.GetComponentInChildren<TextMeshProUGUI>().text = 
+            string.Format("Player {0} is the winner!", winName);
+        winLabel.SetActive(true);
         running = false;
+        StartCoroutine(Commons.DelayedAction(() => StartGame.Restart(), 5));
     }
 
     public void GlobalCorutine(UnityAction lambda, float seconds) {

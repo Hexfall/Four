@@ -10,9 +10,13 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI guiText;
     public TextMeshProUGUI keyText;
 
+    public TextMeshPro wordHistory;
+
     public GameObject stack;
     public GameObject opponentStack;
     public GameObject combo;
+
+    public AudioSource clickSound;
 
     private StackScript stackScript;
     private StackScript opStackScript;
@@ -33,6 +37,8 @@ public class Player : MonoBehaviour
         opStackScript = opponentStack.GetComponent<StackScript>();
         comboScript = combo.GetComponent<ComboScript>();
 
+        wordHistory = GameObject.Find("WordHistory").GetComponent<TextMeshPro>();
+
         Check();
     }
 
@@ -44,6 +50,7 @@ public class Player : MonoBehaviour
             ComboCheck();
             points++;
             lastAcceptedWord = guiText.text;
+            wordHistory.text += lastAcceptedWord + "\n";
         }
         else
             comboScript.Reset();
@@ -72,6 +79,8 @@ public class Player : MonoBehaviour
         if (guiText.text.Length >= 4){
             return;
         }
+        clickSound.Play();
+        clickSound.pitch = Random.Range(0.85f, 1.15f);
 
         //write out this char
         guiText.text += c;
@@ -80,5 +89,9 @@ public class Player : MonoBehaviour
         if (guiText.text.Length == 4){
             StartCoroutine(Commons.DelayedAction(Check, 0.5f));
         }
+    }
+
+    public float getComboPitch() {
+        return 1f + comboScript.comboProgress();
     }
 }
