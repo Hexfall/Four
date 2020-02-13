@@ -16,6 +16,12 @@ public class StartGame : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
             SceneManager.LoadSceneAsync(1);
+        } else if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (SceneManager.GetSceneAt(0).isLoaded) {
+                Application.Quit();
+            } else {
+                SceneManager.LoadScene(0);
+            }
         }
     }
 }
