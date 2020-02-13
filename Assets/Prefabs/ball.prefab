@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1754481121047794973}
   - component: {fileID: -8524787394505368021}
   - component: {fileID: 3579007857561537236}
+  - component: {fileID: 9207971114252253941}
   m_Layer: 0
   m_Name: ball
   m_TagString: Untagged
@@ -150,3 +151,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destructionParticles: {fileID: 3653821172256495577, guid: 1b8c221361e0a1f4f8a640a2ecffd5d8,
     type: 3}
+--- !u!114 &9207971114252253941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754481121047794962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a20feacea9115a4594d8ceab05d4083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: ae21d8cc90fe965469ddc2b3d1b6c4a4, type: 3}
