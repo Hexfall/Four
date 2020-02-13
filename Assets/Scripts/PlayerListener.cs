@@ -41,7 +41,7 @@ public class PlayerListener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown && GameManager.instance.running)
         {
             char? c = null;
             if (Input.GetKeyDown(key1))

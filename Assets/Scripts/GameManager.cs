@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public TextAsset wordsFile;
     public TextAsset comboFile;
     public GameObject winLabel;
+    public bool running = true;
 
     void Awake()
     {
@@ -30,12 +31,6 @@ public class GameManager : MonoBehaviour
         }
         words = new HashSet<string> (wordsFile.text.Split('\n').Select(word => word.Trim()));
         winLabel.GetComponent<TextMeshProUGUI>().text = "";
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public char[] GetCombo()
@@ -58,5 +53,6 @@ public class GameManager : MonoBehaviour
         if (winner.Contains("2"))
             winName = "2";
         winLabel.GetComponent<TextMeshProUGUI>().text = string.Format("Player {0} is the winner!", winName);
+        running = false;
     }
 }
