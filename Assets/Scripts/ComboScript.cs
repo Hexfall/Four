@@ -7,11 +7,13 @@ public class ComboScript : MonoBehaviour
     public Color standby;
     public Color active;
     private int pointer = 0;
+    private AudioSource yay;
 
     // Start is called before the first frame update
     void Start()
     {
         Reset();
+        yay = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -19,6 +21,8 @@ public class ComboScript : MonoBehaviour
     {
         transform.GetChild(pointer).GetComponent<SpriteRenderer>().color = active;
         pointer++;
+        if (fullCombo())
+            yay.Play();
     }
 
     void Update()
