@@ -38,7 +38,7 @@ public class StackScript : MonoBehaviour
         renderer.color = Random.ColorHSV(0, 1, 0, 1, 0.5f, 1);
         b.transform.parent = transform;
         b.transform.localPosition = new Vector2(curAmount % 3 * spacing, Mathf.Floor(curAmount / 3) * spacing);
-        b.transform.position += (Vector3) Random.insideUnitCircle / 4f;
+        b.transform.position += (Vector3)Random.insideUnitCircle / 4f;
         b.transform.localScale *= 0.8f;
         boxArray[curAmount] = b;
         curAmount++;
@@ -53,10 +53,12 @@ public class StackScript : MonoBehaviour
         Destroy(boxArray[pointer]);
         pointer++;
         if (Empty())
+        {
+            score.Play();
             GameManager.instance.Win(gameObject.name);
+        }
         if (!(amount <= 1))
             Remove(amount - 1);
-        // score.Play();
     }
 
     public bool Empty()
