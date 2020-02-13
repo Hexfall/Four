@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -54,5 +55,9 @@ public class GameManager : MonoBehaviour
             winName = "2";
         winLabel.GetComponent<TextMeshProUGUI>().text = string.Format("Player {0} is the winner!", winName);
         running = false;
+    }
+
+    public void GlobalCorutine(UnityAction lambda, float seconds) {
+        StartCoroutine(Commons.DelayedAction(lambda, seconds));
     }
 }
