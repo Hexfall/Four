@@ -16,7 +16,7 @@ public class SpawnDestructionParticles : MonoBehaviour
         main.startColor = GetComponent<SpriteRenderer>().color;
         
         GameManager.instance.GlobalCorutine(() => {emission.enabled = false;}, 0.3f);
-        GameManager.instance.GlobalCorutine(() => Destroy(particleObject), 2f);
+        GameManager.instance.GlobalCorutine(() => Destroy(particleObject.gameObject), 2f);
         particleObject.transform.position = particleObject.transform.position + new Vector3(0,0,-0.2f);
     }
 }
