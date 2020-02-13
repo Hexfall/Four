@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
         if (comboScript.fullCombo())
         {
             opStackScript.Add(2);
-            comboScript.Reset();
+            StartCoroutine(Commons.DelayedAction(() => comboScript.Reset(), 0.5f));
         }
     }
 

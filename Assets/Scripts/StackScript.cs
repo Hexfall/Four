@@ -32,6 +32,8 @@ public class StackScript : MonoBehaviour
     {
         // Create a box, set it's position and add it to the boxArray. Amount times.
         GameObject b = Instantiate(box);
+        SpriteRenderer renderer = b.GetComponent<SpriteRenderer>();
+        renderer.color = Random.ColorHSV();
         b.transform.parent = transform;
         b.transform.localPosition = new Vector2(curAmount % 3 * spacing, Mathf.Floor(curAmount / 3) * spacing);
         b.transform.position += (Vector3) Random.insideUnitCircle / 4f;
