@@ -49,13 +49,14 @@ public class StackScript : MonoBehaviour
     public void Remove(int amount = 1)
     {
         // Destroy the 'amount' youngest boxes.
+        boxArray[pointer].SendMessage("DoDestroy");
         Destroy(boxArray[pointer]);
         pointer++;
         if (Empty())
             GameManager.instance.Win(gameObject.name);
         if (!(amount <= 1))
             Remove(amount - 1);
-        score.Play();
+        // score.Play();
     }
 
     public bool Empty()

@@ -6,7 +6,7 @@ public class SoundOnDestroy : MonoBehaviour
 {
     public AudioClip clip;
 
-    void OnDestroy()
+    public void DoDestroy()
     {
         GameObject s = Instantiate(new GameObject(), transform.position, transform.rotation);
         AudioSource source = s.AddComponent<AudioSource>();

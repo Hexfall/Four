@@ -7,7 +7,7 @@ public class SpawnDestructionParticles : MonoBehaviour
     public GameObject destructionParticles;
 
     // Update is called once per frame
-    void OnDestroy()
+    void DoDestroy()
     {
         GameObject particleObject = Instantiate(destructionParticles, transform.position, transform.rotation);
         ParticleSystem particle = particleObject.GetComponent<ParticleSystem>();
@@ -18,7 +18,5 @@ public class SpawnDestructionParticles : MonoBehaviour
         GameManager.instance.GlobalCorutine(() => {emission.enabled = false;}, 0.3f);
         GameManager.instance.GlobalCorutine(() => Destroy(particleObject), 2f);
         particleObject.transform.position = particleObject.transform.position + new Vector3(0,0,-0.2f);
-        // particleObject.StartCoroutine(Commons.DelayedAction(() => print("test"), 2));
-        // StartCoroutine(Commons.DelayedAction(() => Destroy(particleObject), 1));
     }
 }
