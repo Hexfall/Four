@@ -13,8 +13,8 @@ public class SpawnDestructionParticles : MonoBehaviour
         ParticleSystem particle = particleObject.GetComponent<ParticleSystem>();
         ParticleSystem.MainModule main = particle.main;
         main.startColor = GetComponent<SpriteRenderer>().color;
-        Destroy(particleObject, 5);
-        particleObject.StartCoroutine(Commons.DelayedAction(() => print("test"), 2));
+        Destroy(particleObject, 0.4f);
+        // particleObject.StartCoroutine(Commons.DelayedAction(() => print("test"), 2));
         // StartCoroutine(Commons.DelayedAction(() => Destroy(particleObject), 1));
     }
 }
