@@ -11,6 +11,6 @@ public class SoundOnDestroy : MonoBehaviour
         GameObject s = Instantiate(new GameObject(), transform.position, transform.rotation);
         AudioSource source = s.AddComponent<AudioSource>();
         source.PlayOneShot(clip);
-        Destroy(source, clip.length);
+        Destroy(s, clip.length);
     }
 }
