@@ -23,15 +23,6 @@ public class StackScript : MonoBehaviour
         score = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-            Remove();
-        if (Input.GetMouseButtonDown(1))
-            Add();
-    }
-
     public void Add(int amount = 1)
     {
         // Create a box, set it's position and add it to the boxArray. Amount times.

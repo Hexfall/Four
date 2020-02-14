@@ -32,12 +32,6 @@ public class ComboScript : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-            Add();
-    }
-
     public void Reset()
     {
         for (int i = 0; i < transform.childCount; i++)
