@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     private StackScript opStackScript;
     private ComboScript comboScript;
 
+    public AudioClip wrongSound;
+
     public string lastAcceptedWord;
 
     public int points;
@@ -39,10 +41,10 @@ public class Player : MonoBehaviour
 
         wordHistory = GameObject.Find("WordHistory").GetComponent<TextMeshPro>();
 
-        Check();
+        Check(false);
     }
 
-    private void Check() {
+    private void Check(bool sound = true) {
         //Check word for correctness and give out points
         if (GameManager.instance.IsWord(guiText.text)) {
             stackScript.Remove();
@@ -52,8 +54,11 @@ public class Player : MonoBehaviour
             lastAcceptedWord = guiText.text;
             wordHistory.text += lastAcceptedWord + "\n";
         }
-        else
+        else {
             comboScript.Reset();
+            if (sound)
+                clickSound.PlayOneShot(wrongSound);
+        }
 
         //Reset the word either way
         guiText.text = "";
@@ -87,7 +92,7 @@ public class Player : MonoBehaviour
 
         //if 4 chars have been written, then check
         if (guiText.text.Length == 4){
-            StartCoroutine(Commons.DelayedAction(Check, 0.5f));
+            StartCoroutine(Commons.DelayedAction(() => Check(), 0.5f));
         }
     }
 

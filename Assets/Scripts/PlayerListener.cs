@@ -46,22 +46,18 @@ public class PlayerListener : MonoBehaviour
             char? c = null;
             if (Input.GetKeyDown(key1))
             {
-                print(c1);
                 c = c1;
             }
             else if (Input.GetKeyDown(key2))
             {
-                print(c2);
                 c = c2;
             }
             else if (Input.GetKeyDown(key3))
             {
-                print(c3);
                 c = c3;
             }
             else if (Input.GetKeyDown(key4))
             {
-                print(c4);
                 c = c4;
             }
 

@@ -22,7 +22,12 @@ public class ComboScript : MonoBehaviour
         transform.GetChild(pointer).GetComponent<SpriteRenderer>().color = active;
         pointer++;
         if (fullCombo())
+        {
             yay.Play();
+            Camera.current.GetComponent<StressReceiver>().InduceStress(0.4f);
+        } else {
+            Camera.current.GetComponent<StressReceiver>().InduceStress(0.1f);
+        }
     }
 
     void Update()

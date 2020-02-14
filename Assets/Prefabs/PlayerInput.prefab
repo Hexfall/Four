@@ -768,6 +768,7 @@ MonoBehaviour:
   opponentStack: {fileID: 0}
   combo: {fileID: 0}
   clickSound: {fileID: 8605675397503503385}
+  wrongSound: {fileID: 8300000, guid: 31d8d5237ad76bd49b657cf7375bc923, type: 3}
   lastAcceptedWord: 
   points: 0
 --- !u!82 &8605675397503503385
