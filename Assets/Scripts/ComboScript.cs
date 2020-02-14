@@ -9,15 +9,13 @@ public class ComboScript : MonoBehaviour
     private int pointer = 0;
     private AudioSource yay;
 
-    private StressReceiver stressReceiver;
+    public StressReceiver stressReceiver;
 
     // Start is called before the first frame update
     void Start()
     {
         Reset();
         yay = GetComponent<AudioSource>();
-        Camera camera = Camera.current;
-        stressReceiver = camera.GetComponent<StressReceiver>();
     }
 
     // Update is called once per frame

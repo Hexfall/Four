@@ -1706,6 +1706,11 @@ PrefabInstance:
       propertyPath: active.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7775068118851450856, guid: 2238c855a7221c24d84f4a98a1a1bef9,
+        type: 3}
+      propertyPath: stressReceiver
+      value: 
+      objectReference: {fileID: 519420030}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2238c855a7221c24d84f4a98a1a1bef9, type: 3}
 --- !u!1 &1359792402 stripped
@@ -2937,6 +2942,11 @@ PrefabInstance:
       propertyPath: active.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7775068118851450856, guid: 2238c855a7221c24d84f4a98a1a1bef9,
+        type: 3}
+      propertyPath: stressReceiver
+      value: 
+      objectReference: {fileID: 519420030}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2238c855a7221c24d84f4a98a1a1bef9, type: 3}
 --- !u!1001 &9141629489763382196
